@@ -7,9 +7,18 @@
     android:id="@+id/toolbar"
     android:fitsSystemWindows="true"
     android:minHeight="?attr/actionBarSize"
-    app:theme="@style/ThemeOverlay.AppCompat.Light"
-    android:background="@color/greenHard"
-    app:titleTextColor="@color/yellowHard"
+    app:titleTextColor="@color/putih"
+    android:background="@color/middleblue"
     >
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:background="@color/putih"
+        android:layout_width="10px"
+        android:layout_height="80px"></LinearLayout>
+    <ImageView
+        android:layout_marginLeft="5dp"
+        android:layout_width="80px"
+        android:layout_height="80px"
+        android:src="@drawable/jeneponto"/>
 
 </android.support.v7.widget.Toolbar>

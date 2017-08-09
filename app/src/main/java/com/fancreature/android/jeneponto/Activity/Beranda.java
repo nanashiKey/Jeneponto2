@@ -1,6 +1,8 @@
 package com.fancreature.android.jeneponto.Activity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -14,12 +16,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fancreature.android.jeneponto.HttpHandler;
@@ -49,10 +53,7 @@ private String TAG = Beranda.class.getSimpleName();
 
     private ProgressDialog pDialog;
     @Bind(R.id.list) ListView lv;
-//
-//    @Bind(R.id.llay)
-//    LinearLayout llay;
-    // URL to get contacts JSON
+
     private static String url = "http://visitjeneponto.id/getdata.php/";
 //    private Uri urix = Uri.parse("http://www.visitjeneponto.id"); // missing 'http://' will cause crashed
 
@@ -84,6 +85,7 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 //        setContentView(R.layout.httpsample);
 //        lv.findViewById(R.id.list);
         new GetContacts().execute();
+
 
 
 //        setContentView(R.layout.httpsample);
@@ -206,17 +208,38 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 
     }
 
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String jenepon = "http://visitjeneponto.id";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(jenepon));
+                startActivity(intent);
+//                AlertDialog mDialog = new AlertDialog.Builder(getContext())
+//                        .setTitle(R.string.app_name)
+//                        .setMessage("test onitemclick")
+//                        .setPositiveButton("OK",
+//                                new DialogInterface.OnClickListener() {
+//
+//                                    @Override
+//                                    public void onClick(DialogInterface dialog, int which) {
+//                                        Log.i("MyTag", "Click YES");
+//                                    }
+//                                })
+//                        .create();
+//
+//                mDialog.show();
+            }
+        });
 ////        llay ;
 //        lv.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                String jenepon = "http://visitjeneponto.id";
-//                Intent intent = new Intent(Intent.ACTION_VIEW);
-//                intent.setData(Uri.parse(jenepon));
-//                startActivity(intent);
+//
 //            }
 //        });
     }

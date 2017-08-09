@@ -6,7 +6,6 @@
     android:id="@+id/rlay"
     android:clickable="true"
     >
-
     <ListView
         android:id="@+id/list"
         android:layout_width="fill_parent"

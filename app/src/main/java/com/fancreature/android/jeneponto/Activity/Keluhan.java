@@ -22,12 +22,12 @@ import butterknife.ButterKnife;
 
 public class Keluhan extends Fragment {
 
-    @Bind(R.id.masuk)
+    @Bind(R.id.button3)
     Button masuk;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.login, container, false);
+        View rootView = inflater.inflate(R.layout.keluhan, container, false);
 
         ButterKnife.bind(this, rootView);
         return rootView;

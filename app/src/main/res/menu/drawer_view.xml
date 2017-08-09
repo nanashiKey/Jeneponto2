@@ -35,14 +35,22 @@
             android:id="@+id/nav_delapan"
             android:icon="@drawable/keluhan"
             android:title="@string/feedback"/>
-        <item
-            android:id="@+id/nav_sembilan"
-            android:icon="@drawable/hubungi"
-            android:title="@string/contactUs"/>
-        <item
-            android:id="@+id/nav_sepuluh"
-            android:icon="@drawable/bahasa"
-            android:title="@string/language"/>
 
+        <item android:title="Lainnya">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_sembilan"
+                        android:icon="@drawable/hubungi"
+                        android:title="@string/contactUs" />
+                    <item
+                        android:id="@+id/nav_sepuluh"
+                        android:icon="@drawable/bahasa"
+                        android:title="@string/language" />
+
+                </group>
+
+            </menu>
+        </item>
     </group>
 </menu>

@@ -2,325 +2,191 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@color/teksbok"
     >
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingRight="20dp"
-    android:paddingLeft="20dp"
-    android:paddingTop="20dp"
-    android:orientation="vertical"
-    >
-
-    <TextView
-        android:id="@+id/judul01"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greenHard"
-        android:padding="10dp"
-        android:text="@string/wisataJudul1"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@color/middleblue"
+        android:orientation="horizontal"
         android:textAlignment="center"
-        android:textColor="@color/yellowHard"
-        android:textSize="20dp" />
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal">
+        <ImageView
+            android:textAlignment="center"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/wisata1"
+            />
 
-    <TextView
-        android:id="@+id/konten01"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/wisataKonten1"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:background="@color/yellowHard"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="18dp"
-        />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Wisata Ke Jeneponto"
+            android:textColor="@color/teksbok"
+            android:textSize="20sp" />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="20dp"></LinearLayout>
-
-    <TextView
-        android:id="@+id/judul02"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greenHard"
-        android:padding="10dp"
-        android:text="@string/wisataJudul2"
-        android:textAlignment="center"
-        android:textColor="@color/yellowHard"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/konten02"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/wisataKonten2"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:background="@color/yellowHard"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="18dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"></LinearLayout>
+        android:gravity="center_vertical">
 
-    <TextView
-        android:id="@+id/judul03"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greenHard"
-        android:padding="10dp"
-        android:text="@string/wisataJudul3"
-        android:textAlignment="center"
-        android:textColor="@color/yellowHard"
-        android:textSize="20dp" />
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp">
 
-    <TextView
-        android:id="@+id/konten03"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/wisataKonten3"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:background="@color/yellowHard"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="18dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"></LinearLayout>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/img_atb"
+                android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/judul04"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greenHard"
-        android:padding="10dp"
-        android:text="@string/wisataJudul4"
-        android:textAlignment="center"
-        android:textColor="@color/yellowHard"
-        android:textSize="20dp" />
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/img_att"
+                android:textAlignment="center" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/konten04"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/wisataKonten4"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:background="@color/yellowHard"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="18dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"></LinearLayout>
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp">
 
-    <TextView
-        android:id="@+id/judul05"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greenHard"
-        android:padding="10dp"
-        android:text="@string/wisataJudul5"
-        android:textAlignment="center"
-        android:textColor="@color/yellowHard"
-        android:textSize="20dp" />
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/img_bb"
+                android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/konten05"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/wisataKonten5"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:background="@color/yellowHard"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="18dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"></LinearLayout>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/img_brk"
+                android:textAlignment="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp">
 
-    <TextView
-        android:id="@+id/judul06"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greenHard"
-        android:padding="10dp"
-        android:text="@string/wisataJudul6"
-        android:textAlignment="center"
-        android:textColor="@color/yellowHard"
-        android:textSize="20dp" />
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/img_bs"
+                android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/konten06"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/wisataKonten6"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:background="@color/yellowHard"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="18dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"></LinearLayout>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/img_bsi"
+                android:textAlignment="center" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/judul07"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greenHard"
-        android:padding="10dp"
-        android:text="@string/wisataJudul7"
-        android:textAlignment="center"
-        android:textColor="@color/yellowHard"
-        android:textSize="20dp" />
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp">
 
-    <TextView
-        android:id="@+id/konten07"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/wisataKonten7"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:background="@color/yellowHard"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="18dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"></LinearLayout>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/img_lhr"
+                android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/judul08"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greenHard"
-        android:padding="10dp"
-        android:text="@string/wisataJudul8"
-        android:textAlignment="center"
-        android:textColor="@color/yellowHard"
-        android:textSize="20dp" />
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/img_pk"
+                android:textAlignment="center" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/konten08"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/wisataKonten8"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:background="@color/yellowHard"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="18dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"></LinearLayout>
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp">
 
-    <TextView
-        android:id="@+id/judul09"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greenHard"
-        android:padding="10dp"
-        android:text="@string/wisataJudul9"
-        android:textAlignment="center"
-        android:textColor="@color/yellowHard"
-        android:textSize="20dp" />
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/img_pl"
+                android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/konten9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/wisataKonten9"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:background="@color/yellowHard"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="18dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"></LinearLayout>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/img_put"
+                android:textAlignment="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp">
 
-    <TextView
-        android:id="@+id/judul10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greenHard"
-        android:padding="10dp"
-        android:text="@string/wisataJudul10"
-        android:textAlignment="center"
-        android:textColor="@color/yellowHard"
-        android:textSize="20dp" />
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/img_wb"
+                android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/konten10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/wisataKonten10"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:background="@color/yellowHard"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="18dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"></LinearLayout>
-
-    <TextView
-        android:id="@+id/judul11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greenHard"
-        android:padding="10dp"
-        android:text="@string/wisataJudul11"
-        android:textAlignment="center"
-        android:textColor="@color/yellowHard"
-        android:textSize="20dp" />
-
-    <TextView
-        android:id="@+id/konten11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/wisataKonten11"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
-        android:background="@color/yellowHard"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="18dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"></LinearLayout>
-
+            <ImageView
+                android:visibility="gone"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/img_pk"
+                android:textAlignment="center" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
-
 </ScrollView>

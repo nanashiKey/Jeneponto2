@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity{
 
             FragmentManager fragmentmanager = getSupportFragmentManager();
             fragmentmanager.beginTransaction().replace(R.id.fContent, fragment, "My Tag").commit();
-
+            setTitle(super.getTitle());
              mdrawer.closeDrawers();
         }
     }
@@ -178,12 +178,15 @@ public class MainActivity extends AppCompatActivity{
         switch (menuitem.getItemId()){
             case R.id.nav_satu:
                 FragmentClass = Beranda.class;
+//                getTitle();
                 break;
             case R.id.nav_dua :
                    FragmentClass = Wisata.class;
+//                getTitle();
                 break;
             case R.id.nav_tiga:
                 FragmentClass = Investasi.class;
+//                getTitle();
                 break;
             case R.id.nav_empat:
                 Sdialog();
@@ -228,7 +231,7 @@ public class MainActivity extends AppCompatActivity{
 
         menuitem.setChecked(true);
         //set action bar title
-        setTitle(menuitem.getTitle());
+//        setTitle(menuitem.getTitle());
 
 
         mdrawer.closeDrawers();
