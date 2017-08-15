@@ -189,9 +189,9 @@ public class MainActivity extends AppCompatActivity{
 //                getTitle();
                 break;
             case R.id.nav_empat:
-                Sdialog();
-                FragmentClass = Beranda.class;
-//                FragmentClass = Perizinan.class;
+//                Sdialog();
+//                FragmentClass = Beranda.class;
+                FragmentClass = Perizinan.class;
                 break;
             case R.id.nav_lima:
                 FragmentClass = Something.class;

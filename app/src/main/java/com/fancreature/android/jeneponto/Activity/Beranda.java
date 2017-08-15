@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,6 +28,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fancreature.android.jeneponto.HttpHandler;
+import com.fancreature.android.jeneponto.KontenBerita.PosDelapan;
+import com.fancreature.android.jeneponto.KontenBerita.PosDua;
+import com.fancreature.android.jeneponto.KontenBerita.PosEmpat;
+import com.fancreature.android.jeneponto.KontenBerita.PosEnam;
+import com.fancreature.android.jeneponto.KontenBerita.PosLima;
+import com.fancreature.android.jeneponto.KontenBerita.PosSatu;
+import com.fancreature.android.jeneponto.KontenBerita.PosSembilan;
+import com.fancreature.android.jeneponto.KontenBerita.PosSepuluh;
+import com.fancreature.android.jeneponto.KontenBerita.PosTiga;
+import com.fancreature.android.jeneponto.KontenBerita.PosTujuh;
 import com.fancreature.android.jeneponto.R;
 
 import org.json.JSONArray;
@@ -53,6 +64,9 @@ private String TAG = Beranda.class.getSimpleName();
 
     private ProgressDialog pDialog;
     @Bind(R.id.list) ListView lv;
+    private Class FragmentClass;
+    FragmentManager fragmentManager;
+    Fragment fragment = null;
 
     private static String url = "http://visitjeneponto.id/getdata.php/";
 //    private Uri urix = Uri.parse("http://www.visitjeneponto.id"); // missing 'http://' will cause crashed
@@ -215,10 +229,54 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String jenepon = "http://visitjeneponto.id";
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(jenepon));
-                startActivity(intent);
+
+                switch (position){
+                    case 0 :
+
+                        FragmentClass = PosSatu.class;
+                        break;
+                    case 1 :
+                        FragmentClass = PosDua.class;
+                        break;
+                    case 2 :
+                        FragmentClass = PosTiga.class;
+                        break;
+                    case 3 :
+                        FragmentClass = PosEmpat.class;
+                        break;
+                    case 4 :
+                        FragmentClass = PosLima.class;
+                        break;
+                    case 5 :
+                        FragmentClass = PosEnam.class;
+                        break;
+                    case 6 :
+                        FragmentClass = PosTujuh.class;
+                        break;
+                    case 7 :
+                        FragmentClass = PosDelapan.class;
+                        break;
+                    case 8 :
+                        FragmentClass = PosSembilan.class;
+                        break;
+                    case 9 :
+                        FragmentClass = PosSepuluh.class;
+                        break;
+                    default:
+                        FragmentClass = this.getClass();
+                }
+                try {
+                    fragment = (Fragment) FragmentClass.newInstance();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                FragmentManager fr = getFragmentManager();
+                fr.beginTransaction().replace(R.id.fContent, fragment,"My Tag").commit();
+
+//                String jenepon = "http://visitjeneponto.id";
+//                Intent intent = new Intent(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse(jenepon));
+//                startActivity(intent);
 //                AlertDialog mDialog = new AlertDialog.Builder(getContext())
 //                        .setTitle(R.string.app_name)
 //                        .setMessage("test onitemclick")

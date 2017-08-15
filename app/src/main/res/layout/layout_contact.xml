@@ -6,7 +6,6 @@
     android:animateLayoutChanges="false"
     android:background="@color/putih"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:paddingLeft="20px" android:paddingRight="20px"
     >
 
     <LinearLayout

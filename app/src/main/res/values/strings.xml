@@ -261,5 +261,17 @@ Selain kelapa, masih ada komoditas perkebunan yang potensial di kabupaten Jenepo
     <string name="wisataKonten11">
         Terletak Sebelah Utara Ibu Kota Kabupaten Jeneponto tepatnya di Desa Datara Kecamatan Bonto Ramba Kabupaten Jeneponto, Jarak Tempuh ± 40 KM atau ± 45 Menit dengan Kendaraan Umum dari Kota Bontosunggu (Ibu Kota Kabupaten Jeneponto). Obyek Wisata ini menawarkan keindahan akan panorama alam yang indah. selain itu pengunjung dimanjakan dengan tersedianya Air terjun, Jajanan Tradisional, dan andreline yang cukup menantang.
     </string>
+
+    <string name="izin_nasional">Izin Tingkat Nasional</string>
+    <string name="izin_daerah">Izin Tingkat Daerah</string>
+
+    <string name="izin_3_jam">Perizinan 3 jam</string>
+    <string name="izin_esdm">Perizinan ESDM</string>
+
+    <string name="persyaratan">Persyaratan :</string>
+    <string name="lama">Lama Proses :</string>
+    <string name="biaya">Biaya :</string>
+    <string name="jangka_waktu">Jangka Waktu :</string>
+
 </resources>
 
