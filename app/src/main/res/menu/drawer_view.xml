@@ -41,12 +41,12 @@
                 <group android:checkableBehavior="single">
                     <item
                         android:id="@+id/nav_sembilan"
-                        android:icon="@drawable/hubungi"
+                        android:icon="@drawable/kontak"
                         android:title="@string/contactUs" />
-                    <item
-                        android:id="@+id/nav_sepuluh"
-                        android:icon="@drawable/bahasa"
-                        android:title="@string/language" />
+                    <!--<item-->
+                        <!--android:id="@+id/nav_sepuluh"-->
+                        <!--android:icon="@drawable/bahasa"-->
+                        <!--android:title="@string/language" />-->
 
                 </group>
 

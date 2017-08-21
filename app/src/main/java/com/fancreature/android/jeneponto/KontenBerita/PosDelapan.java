@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.fancreature.android.jeneponto.HttpHandler;
 import com.fancreature.android.jeneponto.R;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,6 +37,7 @@ import static android.content.ContentValues.TAG;
 
 public class PosDelapan extends Fragment {
     @Nullable
+
 
     @Bind(R.id.list)
     ListView lv;
@@ -110,6 +112,7 @@ public class PosDelapan extends Fragment {
                         contact.put("judul", judul);
                         contact.put("isi_konten", isikonten);
                         contact.put("tanggal", tanggal);
+                        contact.put("image", image);
 //                        contact.put("created_by", by);
 
                         // adding contact to contact list
@@ -134,8 +137,9 @@ public class PosDelapan extends Fragment {
             pDialog.dismiss();
 
             ListAdapter adapter = new SimpleAdapter(
+
                     PosDelapan.super.getContext(), contactList,
-                    R.layout.isiberita, new String[]{"judul", "tanggal", "isi_konten"}, new int[]{R.id.judul, R.id.tanggal, R.id.konten});
+                    R.layout.isiberita, new String[]{"judul", "image", "tanggal", "isi_konten"}, new int[]{R.id.judul, R.id.img, R.id.tanggal, R.id.konten});
             lv.setAdapter(adapter);
 
         }

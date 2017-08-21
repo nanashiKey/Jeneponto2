@@ -12,9 +12,11 @@
     <string name="feedback">Keluhan Warga</string>
     <string name="contactUs">Hubungi Kami</string>
     <string name="language">Pengaturan Bahasa</string>
-    <string name="headOffice"><b>Head Office</b>\nAlamat Kabupaten Jeneponto\n<b>Phone</b> : nomor telephone\n<b>Fax</b> : nomor Fax</string>
-    <string name="OfficeHours"><b>Office Hours(GMT +7)</b>\nMonday - Thursday : dari jam berapa sampai jam berapa\nFriday : dari jam berapa sampai jam berapa\nSaturday, Sunday : Closed</string>
-    <string name="OfficeHours2"><b>Licensing and Non Licensing\nService Hours(GMT +7)</b>\nMonday - Thursday : dari jam berapa sampai jam berapa\nFriday : dari jam berapa sampai jam berapa\nSaturday, Sunday : Closed</string>
+    <string name="headOffice"><b>Head Office</b>\nJl. Lingkar No. 30 Bontosunggu, Kabupaten Jeneponto, Sulawesi Selatan.</string>
+    <string name="OfficeHours"><b>Website</b>\nVisitjeneponto.id</string>
+    <!--<string name="OfficeHours"><b>Office Hours(GMT +7)</b>\nMonday - Thursday : dari jam berapa sampai jam berapa\nFriday : dari jam berapa sampai jam berapa\nSaturday, Sunday : Closed</string>-->
+    <string name="OfficeHours2"><b>Telp.</b>\n+62419-2410044</string>
+    <!--<string name="OfficeHours2"><b>Licensing and Non Licensing\nService Hours(GMT +7)</b>\nMonday - Thursday : dari jam berapa sampai jam berapa\nFriday : dari jam berapa sampai jam berapa\nSaturday, Sunday : Closed</string>-->
     <string name="sure">Apa Anda Yakin Ingin Keluar?</string>
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>

@@ -1,6 +1,7 @@
 package com.fancreature.android.jeneponto.KontenBerita;
 
 import android.app.ProgressDialog;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 
 import com.fancreature.android.jeneponto.HttpHandler;
 import com.fancreature.android.jeneponto.R;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +40,8 @@ import static android.content.ContentValues.TAG;
 public class PosDua extends Fragment{
     @Nullable
 
+    @Bind(R.id.img)
+    ImageView img;
     @Bind(R.id.list)
     ListView lv;
     private ProgressDialog pDialog;
@@ -76,7 +81,6 @@ public class PosDua extends Fragment{
         @Override
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
-
             // Making a request to url and getting response
             String jsonStr = sh.makeServiceCall(url);
 
@@ -95,7 +99,7 @@ public class PosDua extends Fragment{
 
 //                        String id = c.getString("id");
                         String kode = c.getString("kode");
-                        String image = c.getString("image");
+                        String image = "http://visitjeneponto.id" + c.getString("image");
                         String judul = c.getString("judul");
                         String isikonten = String.valueOf(Html.fromHtml(c.getString("isi_konten")));
                         String tanggal = c.getString("tanggal_rilis");
@@ -108,6 +112,7 @@ public class PosDua extends Fragment{
                         // adding each child node to HashMap key => value
 //                        contact.put("kode", id);
                         contact.put("judul", judul);
+                        contact.put("image", image);
                         contact.put("isi_konten", isikonten);
                         contact.put("tanggal", tanggal);
 //                        contact.put("created_by", by);
@@ -137,7 +142,6 @@ public class PosDua extends Fragment{
                     PosDua.super.getContext(), contactList,
                     R.layout.isiberita, new String[]{"judul", "tanggal", "isi_konten"}, new int[]{R.id.judul, R.id.tanggal, R.id.konten});
             lv.setAdapter(adapter);
-
         }
     }
 
@@ -146,6 +150,12 @@ public class PosDua extends Fragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+//        String[] image = new String[]{"image"};
+        Picasso.with(this.getContext())
+                .load("http://visitjeneponto.id/webimage/BE1C43A96AB448A6BA7D882CEEB09D98.jpg")
+                .placeholder(R.drawable.jeneponto)
+                .error(R.drawable.jeneponto)
+                .into(img);
     }
 
 }

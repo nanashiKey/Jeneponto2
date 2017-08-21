@@ -36,9 +36,6 @@ package com.fancreature.android.jeneponto.Activity;
         import butterknife.Bind;
         import butterknife.ButterKnife;
 
-//import butterknife.Bind;
-//import butterknife.ButterKnife;
-
 /**
  * Created by pranadana on 8/9/2017.
  */

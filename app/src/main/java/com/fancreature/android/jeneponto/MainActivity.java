@@ -211,12 +211,12 @@ public class MainActivity extends AppCompatActivity{
             case R.id.nav_sembilan:
                 FragmentClass = Hubungi.class;
                 break;
-            case R.id.nav_sepuluh:
-                Sdialog();
-                FragmentClass = Beranda.class;
-//                 FragmentClass = Bahasa.class;
+//            case R.id.nav_sepuluh:
+//                Sdialog();
+//                FragmentClass = Beranda.class;
+////                 FragmentClass = Bahasa.class;
 
-                break;
+//                break;
             default:
                 FragmentClass = Hubungi.class;
         }
