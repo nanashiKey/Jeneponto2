@@ -151,11 +151,11 @@ public class PosDua extends Fragment{
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 //        String[] image = new String[]{"image"};
-        Picasso.with(this.getContext())
-                .load("http://visitjeneponto.id/webimage/BE1C43A96AB448A6BA7D882CEEB09D98.jpg")
-                .placeholder(R.drawable.jeneponto)
-                .error(R.drawable.jeneponto)
-                .into(img);
+//        Picasso.with(this.getContext())
+//                .load("http://visitjeneponto.id/webimage/BE1C43A96AB448A6BA7D882CEEB09D98.jpg")
+//                .placeholder(R.drawable.jeneponto)
+//                .error(R.drawable.jeneponto)
+//                .into(img);
     }
 
 }

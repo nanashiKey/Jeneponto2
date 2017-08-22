@@ -7,5 +7,6 @@
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="somehow_header">170dp</dimen>
+    <dimen name="tekslah">20sp</dimen>
 
 </resources>

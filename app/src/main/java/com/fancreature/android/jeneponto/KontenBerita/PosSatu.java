@@ -1,6 +1,8 @@
 package com.fancreature.android.jeneponto.KontenBerita;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -40,18 +43,21 @@ import static android.content.ContentValues.TAG;
 public class PosSatu extends Fragment {
     @Nullable
 
+
     @Bind(R.id.list)
     ListView lv;
     private ProgressDialog pDialog;
     TextView x;
     private static String url = "http://visitjeneponto.id/connection/getisiberitaapps.php";
+    private static String url2 = "http://visitjeneponto.id";
     ArrayList<HashMap<String, String>> contactList;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootview = inflater.inflate(R.layout.httpsample, container, false);
-
         ButterKnife.bind(this, rootview);
         return rootview;
+
+
     }
 
     @Override
@@ -59,7 +65,15 @@ public class PosSatu extends Fragment {
         super.onCreate(savedInstanceState);
         contactList = new ArrayList<>();
         new GetContacts().execute();
-
+//        Button btnberita = (Button) getView().findViewById(R.id.btn_berita);
+//        btnberita.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent x = new Intent();
+//                x.setData(Uri.parse(url2));
+//                startActivity(x);
+//            }
+//        });
     }
 
 
@@ -149,7 +163,10 @@ public class PosSatu extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
     }
+
+
 
 
 }

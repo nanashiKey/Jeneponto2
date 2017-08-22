@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -37,6 +38,8 @@ import static android.content.ContentValues.TAG;
 public class PosTujuh extends Fragment {
     @Nullable
 
+    @Bind(R.id.btn_berita)
+    Button btnberita;
     @Bind(R.id.list)
     ListView lv;
     private ProgressDialog pDialog;

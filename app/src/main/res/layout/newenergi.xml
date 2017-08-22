@@ -31,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Energi Terbarukan"
+                android:text="@string/something"
                 android:textColor="@color/teksbok"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -45,7 +45,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/energiReloadTitle"
+                android:text="@string/something"
                 android:textSize="20dp"
                 android:textColor="@color/greenHard"
                 android:layout_gravity="center"

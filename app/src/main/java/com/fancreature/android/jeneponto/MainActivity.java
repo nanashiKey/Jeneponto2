@@ -200,8 +200,8 @@ public class MainActivity extends AppCompatActivity{
                 FragmentClass = Tracking.class;
                 break;
             case R.id.nav_tujuh:
-//                FragmentClass = Kalkulator.class;
-                FragmentClass = Sample.class;
+                FragmentClass = Kalkulator.class;
+//                FragmentClass = Sample.class;
 //                fragment = new Sample();
                 break;
 

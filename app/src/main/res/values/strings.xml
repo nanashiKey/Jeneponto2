@@ -6,7 +6,7 @@
     <string name="visit">Wisata Ke Jeneponto</string>
     <string name="invest">Peluang Investasi</string>
     <string name="allow">Prosedur Perizinan</string>
-    <string name="something">Energi Terbarukan</string>
+    <string name="something">Energi</string>
     <string name="track">Tracking Perizinan</string>
     <string name="retribution">Kalkulator Retribusi</string>
     <string name="feedback">Keluhan Warga</string>
@@ -274,6 +274,11 @@ Selain kelapa, masih ada komoditas perkebunan yang potensial di kabupaten Jenepo
     <string name="lama">Lama Proses :</string>
     <string name="biaya">Biaya :</string>
     <string name="jangka_waktu">Jangka Waktu :</string>
+    <string name="ket_luas">L = Luas lantai bangunan gedung</string>
+    <string name="ket_volume">V = Volume/besaran (m2, m, unit)</string>
+    <string name="ket_it">It = Indeks Terintegrasi</string>
+    <string name="indeks">Indeks</string>
+    <string name="ket_indeks">Indeks Pembangunan Baru = 1.00</string>
 
 </resources>
 
