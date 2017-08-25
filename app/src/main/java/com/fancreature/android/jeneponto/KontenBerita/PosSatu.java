@@ -40,7 +40,7 @@ import static android.content.ContentValues.TAG;
  * Created by Irfan Assidiq on 8/12/2017.
  */
 
-public class PosSatu extends Fragment {
+public class PosSatu extends Fragment implements View.OnClickListener {
     @Nullable
 
 
@@ -66,14 +66,12 @@ public class PosSatu extends Fragment {
         contactList = new ArrayList<>();
         new GetContacts().execute();
 //        Button btnberita = (Button) getView().findViewById(R.id.btn_berita);
-//        btnberita.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent x = new Intent();
-//                x.setData(Uri.parse(url2));
-//                startActivity(x);
-//            }
-//        });
+//        btnberita.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 
 

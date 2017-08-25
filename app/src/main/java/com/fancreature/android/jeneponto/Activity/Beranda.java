@@ -215,7 +215,7 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
              * */
             ListAdapter adapter = new SimpleAdapter(
                     Beranda.super.getContext(), contactList,
-                    R.layout.list_item, new String[]{"tanggal", "judul", "created_by"}, new int[]{R.id.tanggal, R.id.judul, R.id.author});
+                    R.layout.list_item, new String[]{"tanggal", "judul"}, new int[]{R.id.tanggal, R.id.judul});
 
             lv.setAdapter(adapter);
         }
