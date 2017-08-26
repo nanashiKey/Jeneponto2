@@ -116,7 +116,7 @@ public class Kalkulator extends Fragment {
                     spinHsbg.setVisibility(View.GONE);
                     spinKerang.setVisibility(View.GONE);
                     spinPenangkapanIkan.setVisibility(View.GONE);
-                    hasilHitung.setText("");
+                    hasilHitung.setText(null);
                     inputLuas.setVisibility(View.GONE);
                     teksLuas.setVisibility(View.GONE);
 

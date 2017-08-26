@@ -22,6 +22,7 @@ import android.widget.TextView;
 
 import com.fancreature.android.jeneponto.Activity.Beranda;
 import com.fancreature.android.jeneponto.HttpHandler;
+import com.fancreature.android.jeneponto.MainActivity;
 import com.fancreature.android.jeneponto.R;
 
 import org.json.JSONArray;
@@ -43,7 +44,14 @@ import static android.content.ContentValues.TAG;
 public class PosSatu extends Fragment implements View.OnClickListener {
     @Nullable
 
+    @Bind(R.id.btn_berita)
+    Button btnberita;
+//    @Bind(R.id.btn_back)
+//    Button btnback;
 
+
+//    Button btnberita = (Button) getView().findViewById(R.id.btn_berita);
+//    Button btnback = (Button) getView().findViewById(R.id.btn_back);
     @Bind(R.id.list)
     ListView lv;
     private ProgressDialog pDialog;
@@ -56,8 +64,6 @@ public class PosSatu extends Fragment implements View.OnClickListener {
         View rootview = inflater.inflate(R.layout.httpsample, container, false);
         ButterKnife.bind(this, rootview);
         return rootview;
-
-
     }
 
     @Override
@@ -65,13 +71,27 @@ public class PosSatu extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         contactList = new ArrayList<>();
         new GetContacts().execute();
-//        Button btnberita = (Button) getView().findViewById(R.id.btn_berita);
-//        btnberita.setOnClickListener(this);
+        if (btnberita != null) {
+            btnberita.setOnClickListener(this);
+        }
+//        if (btnback != null){
+//        btnback.setOnClickListener(this);
+//    }
     }
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()){
+            case R.id.btn_berita :
+                Intent x = new Intent();
+                x.setData(Uri.parse(url2));
+                startActivity(x);
+                break;
+//            case R.id.btn_back :
+//                Intent y = new Intent(getContext(), MainActivity.class);
+//                startActivity(y);
+//                break;
+        }
     }
 
 
@@ -163,8 +183,6 @@ public class PosSatu extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
 
     }
-
-
 
 
 }

@@ -232,7 +232,6 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 
                 switch (position){
                     case 0 :
-
                         FragmentClass = PosSatu.class;
                         break;
                     case 1 :
@@ -301,4 +300,6 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 //            }
 //        });
     }
+
+
 }

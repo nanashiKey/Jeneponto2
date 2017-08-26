@@ -44,7 +44,7 @@ public class FragmentAsal extends Fragment {
 //        return super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragmentdua, container, false);
         TextView tvlabel = (TextView) view.findViewById(R.id.tvlabel);
-        tvlabel.setText(page +" "+taitel);
+        tvlabel.setText(R.string.lorem);
 //        ArrayAdapter adapter = new ArrayAdapter(getContext(), R.layout.fragmentawal, listArray );
 //        ListView lv = (ListView) view.findViewById(R.id.list);
 //        lv.setAdapter(adapter);

@@ -24,6 +24,7 @@ import com.fancreature.android.jeneponto.Activity.Hubungi;
 import com.fancreature.android.jeneponto.Activity.Investasi;
 import com.fancreature.android.jeneponto.Activity.Kalkulator;
 import com.fancreature.android.jeneponto.Activity.Keluhan;
+import com.fancreature.android.jeneponto.Activity.Peluang;
 import com.fancreature.android.jeneponto.Activity.Perizinan;
 import com.fancreature.android.jeneponto.Activity.Sample;
 import com.fancreature.android.jeneponto.Activity.Something;
@@ -185,7 +186,9 @@ public class MainActivity extends AppCompatActivity{
 //                getTitle();
                 break;
             case R.id.nav_tiga:
-                FragmentClass = Investasi.class;
+//                Sdialog();
+                FragmentClass =  Peluang.class;
+//                FragmentClass = Investasi.class;
 //                getTitle();
                 break;
             case R.id.nav_empat:

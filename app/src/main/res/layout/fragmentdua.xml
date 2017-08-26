@@ -11,6 +11,9 @@
             android:id="@+id/tvlabel"
             android:layout_width="match_parent"
             android:text="hai saya fragment dua"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:layout_gravity="center_horizontal|left"
             android:layout_height="wrap_content"
             />
 
