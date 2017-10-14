@@ -18,8 +18,8 @@ import com.fancreature.android.jeneponto.FragmentPeluang.FragmentTiga;
 
 public class FragmentClassAdapt extends FragmentPagerAdapter {
 
-    final int PAGE_COUNT = 5;
-    private String tabTitles[]= new String[]{"Peluangku", "Peluangmu", "peluangnya", "peluangKuh", "peluangkitaah"};
+    final int PAGE_COUNT = 6;
+    private String tabTitles[]= new String[]{"Aset Daerah", "Perikanan dan Kelautan", "Perkebunan", "Pertanian Holtikultura", "Pertanian Tanaman Pangan","Peternakan"};
 
     public FragmentClassAdapt(FragmentManager fm) {
         super(fm);

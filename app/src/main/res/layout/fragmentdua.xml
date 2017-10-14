@@ -15,6 +15,7 @@
             android:paddingRight="20px"
             android:layout_gravity="center_horizontal|left"
             android:layout_height="wrap_content"
+            android:textColor="@color/darkblue"
             />
 
     </LinearLayout>

@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 
 import com.fancreature.android.jeneponto.Activity.Beranda;
 import com.fancreature.android.jeneponto.HttpHandler;
+import com.fancreature.android.jeneponto.KontenWisata.WisataFull;
 import com.fancreature.android.jeneponto.MainActivity;
 import com.fancreature.android.jeneponto.R;
 
@@ -41,17 +43,9 @@ import static android.content.ContentValues.TAG;
  * Created by Irfan Assidiq on 8/12/2017.
  */
 
-public class PosSatu extends Fragment implements View.OnClickListener {
+public class PosSatu extends Fragment{
     @Nullable
 
-    @Bind(R.id.btn_berita)
-    Button btnberita;
-//    @Bind(R.id.btn_back)
-//    Button btnback;
-
-
-//    Button btnberita = (Button) getView().findViewById(R.id.btn_berita);
-//    Button btnback = (Button) getView().findViewById(R.id.btn_back);
     @Bind(R.id.list)
     ListView lv;
     private ProgressDialog pDialog;
@@ -59,11 +53,15 @@ public class PosSatu extends Fragment implements View.OnClickListener {
     private static String url = "http://visitjeneponto.id/connection/getisiberitaapps.php";
     private static String url2 = "http://visitjeneponto.id";
     ArrayList<HashMap<String, String>> contactList;
+    private Class fragmentClass;
+    Fragment fragment = null;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootview = inflater.inflate(R.layout.httpsample, container, false);
         ButterKnife.bind(this, rootview);
         return rootview;
+
     }
 
     @Override
@@ -71,28 +69,8 @@ public class PosSatu extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         contactList = new ArrayList<>();
         new GetContacts().execute();
-        if (btnberita != null) {
-            btnberita.setOnClickListener(this);
-        }
-//        if (btnback != null){
-//        btnback.setOnClickListener(this);
-//    }
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btn_berita :
-                Intent x = new Intent();
-                x.setData(Uri.parse(url2));
-                startActivity(x);
-                break;
-//            case R.id.btn_back :
-//                Intent y = new Intent(getContext(), MainActivity.class);
-//                startActivity(y);
-//                break;
-        }
-    }
 
 
     private class GetContacts extends AsyncTask<Void, Void, Void> {
@@ -172,8 +150,8 @@ public class PosSatu extends Fragment implements View.OnClickListener {
                     PosSatu.super.getContext(), contactList,
                     R.layout.isiberita, new String[]{"judul", "tanggal", "isi_konten"}, new int[]{R.id.judul, R.id.tanggal, R.id.konten});
             lv.setAdapter(adapter);
+            }
 
-        }
 }
 
 
@@ -182,7 +160,6 @@ public class PosSatu extends Fragment implements View.OnClickListener {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        }
     }
 
-
-}

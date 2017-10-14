@@ -2,8 +2,11 @@ package com.fancreature.android.jeneponto.Activity;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Binder;
@@ -12,6 +15,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -73,16 +77,6 @@ private String TAG = Beranda.class.getSimpleName();
 
     ArrayList<HashMap<String, String>> contactList;
 
-
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        View rootView = inflater.inflate(R.layout.httpsample, container, false);
-//
-////        getActivity();
-//
-//        return rootView;
-//    }
-@Nullable
 @Override
 public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
     View rootView = inflater.inflate(R.layout.httpsample, container, false);
@@ -100,6 +94,23 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 //        lv.findViewById(R.id.list);
         new GetContacts().execute();
 
+        if(!cekInternet()){
+            AlertDialog mDialog = new AlertDialog.Builder(this.getContext())
+                    .setTitle(R.string.app_name)
+                    .setMessage(R.string.cekKoneksi)
+                    .setPositiveButton(R.string.yes,
+                            new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Log.i("MyTag", "Click Ya");
+                                    System.exit(0);
+                                }
+
+                            })
+                    .create();
+            mDialog.show();
+        }
 
 
 //        setContentView(R.layout.httpsample);
@@ -229,7 +240,9 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                if (position == 1){
+                    Log.d("ini akses lokasi", "ntuk posisi 1");
+                }
                 switch (position){
                     case 0 :
                         FragmentClass = PosSatu.class;
@@ -299,6 +312,13 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 //
 //            }
 //        });
+    }
+
+    private boolean cekInternet(){
+        ConnectivityManager connMngr = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo informasi = connMngr.getActiveNetworkInfo();
+        return (informasi != null && informasi.isConnected());
+
     }
 
 

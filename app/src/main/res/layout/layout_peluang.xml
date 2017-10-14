@@ -43,7 +43,8 @@
         android:background="@color/middleblue"
         app:pstsIndicatorColor="@color/darkblue"
         app:pstsUnderlineColor="#ffff"
-        app:pstsDividerColor="#ffff"/>
+        app:pstsDividerColor="#ffff"
+        app:theme="@style/AppTheme"/>
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"

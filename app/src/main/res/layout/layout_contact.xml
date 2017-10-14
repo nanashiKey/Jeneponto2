@@ -52,7 +52,7 @@
         <ImageView
             android:id="@+id/imview2"
             android:layout_width="match_parent"
-            android:layout_height="800px"
+            android:layout_height="296dp"
             app:srcCompat="@drawable/bckg" />
 
     </LinearLayout>

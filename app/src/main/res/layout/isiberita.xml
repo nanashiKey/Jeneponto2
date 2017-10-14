@@ -109,6 +109,7 @@
                 android:textSize="14sp"
                 android:textColor="@color/teksbok"
                 android:id="@+id/btn_berita"
+
                 />
         </LinearLayout>
 

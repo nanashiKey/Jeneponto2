@@ -1,5 +1,7 @@
 package com.fancreature.android.jeneponto.FragmentPerizinan;
 
+import android.app.Application;
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -7,11 +9,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.text.Editable;
 import android.text.Html;
+import android.text.Html.TagHandler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -23,9 +29,11 @@ import com.fancreature.android.jeneponto.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.xml.sax.XMLReader;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.jar.JarEntry;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -34,20 +42,23 @@ import butterknife.ButterKnife;
  * Created by pranadana on 8/15/2017.
  */
 
-public class IzinDaerah extends Fragment {
-    private String TAG = Perizinan.class.getSimpleName();
+public class IzinDaerah extends Fragment implements TagHandler, View.OnClickListener {
+    private String TAG = IzinDaerah.class.getSimpleName();
 
     private ProgressDialog pDialog;
+
     @Bind(R.id.list)
     ListView lv;
     //
 //    @Bind(R.id.llay)
 //    LinearLayout llay;
     // URL to get contacts JSON
-    private static String url = "http://visitjeneponto.id/connection/getIzinApps.php/";
+    private static String urlList = "http://visitjeneponto.id/connection/getListIzinApps.php/";
+    private static String urlKonten = "http://visitjeneponto.id/connection/getKontenIzinApps.php/id=?";
 //    private Uri urix = Uri.parse("http://www.visitjeneponto.id"); // missing 'http://' will cause crashed
 
     ArrayList<HashMap<String, String>> contactList;
+    ArrayList<HashMap<String, String>> contactKonten;
 
 
     //    @Override
@@ -61,7 +72,7 @@ public class IzinDaerah extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.list_perizinan_daerah, container, false);
+        View rootView = inflater.inflate(R.layout.listview_perizinan_daerah, container, false);
 
 //    rootView.findViewById(R.id.l)
         ButterKnife.bind(this, rootView);
@@ -72,8 +83,6 @@ public class IzinDaerah extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         contactList = new ArrayList<>();
-//        setContentView(R.layout.httpsample);
-//        lv.findViewById(R.id.list);
         new GetContacts().execute();
 
 
@@ -82,6 +91,11 @@ public class IzinDaerah extends Fragment {
 //        getLayoutInflater().inflate(R.layout.httpsample, contentFrameLayout);
     }
 
+    @Override
+    public void handleTag(boolean opening, String tag, Editable output, XMLReader xmlReader) {
+        if (tag.equals("ul") && !opening) output.append("\n");
+        if (tag.equals("li") && opening) output.append("\n\tâ€¢ ");
+    }
 
 
     /**
@@ -107,35 +121,32 @@ public class IzinDaerah extends Fragment {
             HttpHandler sh = new HttpHandler();
 
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(url);
+            String jsonStrList = sh.makeServiceCall(urlList);
+            String jsonStrKonten = sh.makeServiceCall(urlKonten);
 
-            Log.e(TAG, "Response from url: " + jsonStr);
+            Log.e(TAG, "Response from url: " + jsonStrList);
+            Log.e(TAG, "Response from url: " + jsonStrKonten);
 
-            if (jsonStr != null) {
+            if (jsonStrList != null) {
                 try {
-                    JSONObject jsonObj = new JSONObject(jsonStr);
+                    JSONObject jsonObjList = new JSONObject(jsonStrList);
+                    JSONObject jsonObjKonten = new JSONObject(jsonStrKonten);
 
                     // Getting JSON Array node
-                    JSONArray contacts = jsonObj.getJSONArray("prosedur_perizinan");
+                    JSONArray contactsList = jsonObjList.getJSONArray("kategori");
+                    JSONArray contactsKonten = jsonObjKonten.getJSONArray("page_konten");
 
                     // looping through All Contacts
-                    for (int i = 0; i < contacts.length(); i++) {
-                        JSONObject c = contacts.getJSONObject(i);
+                    for (int i = 0; i < contactsList.length(); i++) {
+                        JSONObject a = contactsKonten.getJSONObject(i);
+                        JSONObject c = contactsList.getJSONObject(i);
 
-//                        String id = c.getString("id");
-//                        String kode = c.getString("kode");
-//                        String image = c.getString("image");
-//                        String judul = c.getString("judul");
-//                        String isikonten = c.getString("isi_konten");
-//                        String tanggal = c.getString("tanggal_rilis");
-//                        String by = c.getString("created_by");
-//                        String id = c.getString("id");
-//                        String kode = c.getString("kode");
-                        String namaizin = c.getString("nama_izin");
-                        String persyaratan = String.valueOf(Html.fromHtml(c.getString("persyaratan")));
-                        String lamaProses = c.getString("lama_proses");
-                        String biaya = String.valueOf(Html.fromHtml(c.getString("biaya")));
-                        String jangkaWaktu = c.getString("jangka_waktu");
+//                        String kategoriId = c.getString("kategori_id");
+                        String namaKategori = c.getString("nm_kategori");
+                        String kategoriReffId = a.getString("kategori_reff_id");
+                        String konten = String.valueOf(Html.fromHtml(a.getString("page_konten"), null, new IzinDaerah()));
+//                        String kategoriReffId = a.getString("kategori_reff_id");
+//                        String persyaratan = String.valueOf(Html.fromHtml(c.getString("persyaratan")));
 
                         // Phone node is JSON Object
 //                        JSONObject phone = c.getJSONObject("phone");
@@ -147,15 +158,12 @@ public class IzinDaerah extends Fragment {
                         HashMap<String, String> contact = new HashMap<>();
 
                         // adding each child node to HashMap key => value
-//                        contact.put("kode", id);
-//                        contact.put("kode", kode);
-//                        contact.put("isi_konten", isikonten);
-//                        contact.put("created_by", by);
-                        contact.put("nama_izin", namaizin);
-                        contact.put("persyaratan", persyaratan);
-                        contact.put("lama_proses", lamaProses);
-                        contact.put("biaya", biaya);
-                        contact.put("jangka_waktu", jangkaWaktu);
+
+//                        contact.put("kategori_id", kategoriId);
+                        contact.put("nm_kategori", namaKategori);
+                        contact.put("kategori_reff_id", kategoriReffId);
+                        contact.put("page_konten", konten);
+//                        contact.put("kategori_reff_id", kategoriReffId);
 
                         // adding contact to contact list
                         contactList.add(contact);
@@ -173,6 +181,7 @@ public class IzinDaerah extends Fragment {
 //                    });
 
                 }
+
             } else {
                 Log.e(TAG, "Couldn't get json from server.");
 //                runOnUiThread(new Runnable() {
@@ -186,13 +195,13 @@ public class IzinDaerah extends Fragment {
 //                });
 
             }
-
             return null;
+
         }
 
         @RequiresApi(api = Build.VERSION_CODES.M)
         @Override
-        protected void onPostExecute(Void result) {
+        protected void onPostExecute(final Void result) {
             super.onPostExecute(result);
             // Dismiss the progress dialog
             if (pDialog.isShowing())
@@ -200,27 +209,70 @@ public class IzinDaerah extends Fragment {
             /**
              * Updating parsed JSON data into ListView
              * */
-            ListAdapter adapter = new SimpleAdapter(
+
+//            final String kategoriReff = new String("kategori_reff_id");
+
+//            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                    HttpHandler sh = new HttpHandler();
+//
+//                    // Making a request to url and getting response
+//
+//                    String linkKonten = urlKonten + kategoriReff;
+//
+//                    Log.e(TAG, "Response from url: " + linkKonten);
+//
+//                    if (linkKonten != null) {
+//                        try {
+//                            JSONObject jsonObjKonten = new JSONObject(linkKonten);
+//
+//                            // Getting JSON Array node
+//                            JSONArray contactsKonten = jsonObjKonten.getJSONArray(String.valueOf(kategoriReff));
+//
+//                            JSONObject ambilId = contactsKonten.getJSONObject(0);
+//                            String konten = String.valueOf(Html.fromHtml(ambilId.getString("page_konten"), null, new IzinDaerah()));
+////                        String kategoriReffId = a.getString("kategori_reff_id");
+////                        String persyaratan = String.valueOf(Html.fromHtml(c.getString("persyaratan")));
+//
+//                            // Phone node is JSON Object
+////                        JSONObject phone = c.getJSONObject("phone");
+////                        String mobile = phone.getString("mobile");
+////                        String home = phone.getString("home");
+////                        String office = phone.getString("office");
+//
+//                            // tmp hash map for single contact
+//                            HashMap<String, String> contact = new HashMap<>();
+//
+//                            // adding each child node to HashMap key => value
+//
+//                            contact.put("kategori_reff_id", String.valueOf(ambilId));
+//                            contact.put("page_konten", konten);
+////                        contact.put("kategori_reff_id", kategoriReffId);
+//
+//                            // adding contact to contact list
+//                            contactList.add(contact);
+//                        } catch (final JSONException e) {
+//                            Log.e(TAG, "Json parsing error: " + e.getMessage());
+//                        }
+//                    } else {
+//                        Log.e(TAG, "Couldn't get json from server.");
+//                    }
+
+            ListAdapter adapterList = new SimpleAdapter(
                     IzinDaerah.super.getContext(), contactList,
-                    R.layout.list_izin_daerah, new String[]{"nama_izin", "persyaratan", "lama_proses", "biaya", "jangka_waktu"}, new int[]{R.id.nama_izin, R.id.persyaratan, R.id.lama_proses, R.id.biaya, R.id.jangka_waktu});
-
-            lv.setAdapter(adapter);
+                    R.layout.list_izin_daerah, new String[]{"nm_kategori", "page_konten"}, new int[]{R.id.nama_izin, R.id.keteranganIzinDaerah});
+            lv.setAdapter(adapterList);
         }
-
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-////        llay ;
-//        lv.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String jenepon = "http://visitjeneponto.id";
-//                Intent intent = new Intent(Intent.ACTION_VIEW);
-//                intent.setData(Uri.parse(jenepon));
-//                startActivity(intent);
-//            }
-//        });
     }
+
+    @Override
+    public void onClick(View v){
+    }
+
 }

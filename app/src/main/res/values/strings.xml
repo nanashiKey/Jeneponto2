@@ -30,7 +30,7 @@
     <string name="ket_rehabilitasi_prasarana"><b>Perhitungan : V x I x Tk x HSbg\n\n</b>L = Luas lantai bangunan gedung\nV = Volume/besaran (dalam satuan m2, m, dan unit)\nI = Indeks\nIt = Indeks terintegrasi\nTk = Tingkat kerusakan (0.45 untuk tingkat kerusakan sedang, 0.65 untuk tingkat kerusakan berat)\n1.00 = Indeks pembangunan baru\nHSbg = Harga satuan retribusi bangunan gedung (hanya 1 tarif setiap kabupaten)</string>
     <string name="ket_imb">L = Luas lantai bangunan gedung\nV = Volume/besaran (dalam satuan m2, m, dan unit)\nI = Indeks\nIt = Indeks terintegrasi\nTk = Tingkat kerusakan (0.45 untuk tingkat kerusakan sedang, 0.65 untuk tingkat kerusakan berat)\n1.00 = Indeks pembangunan baru\nHSbg = Harga satuan retribusi bangunan gedung (hanya 1 tarif setiap kabupaten)
     </string>
-
+    <string name="cekKoneksi">Koneksi tidak tersedia\nSilahkan aktifkan terlebih dahulu!</string>
 
     <string-array name="izin_pertama">
         <item>Pilih Jenis Izin</item>
@@ -280,5 +280,17 @@ Selain kelapa, masih ada komoditas perkebunan yang potensial di kabupaten Jenepo
     <string name="indeks">Indeks</string>
     <string name="ket_indeks">Indeks Pembangunan Baru = 1.00</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string-array name="listWisata">
+        <item>@drawable/w1</item>
+        <item>@drawable/w2</item>
+        <item>@drawable/w3</item>
+        <item>@drawable/w4</item>
+        <item>@drawable/w5</item>
+        <item>@drawable/w6</item>
+        <item>@drawable/w7</item>
+        <item>@drawable/w8</item>
+        <item>@drawable/w9</item>
+        <item>@drawable/w10</item>
+    </string-array>
 </resources>
 
