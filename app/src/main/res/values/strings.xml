@@ -280,17 +280,28 @@ Selain kelapa, masih ada komoditas perkebunan yang potensial di kabupaten Jenepo
     <string name="indeks">Indeks</string>
     <string name="ket_indeks">Indeks Pembangunan Baru = 1.00</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
-    <string-array name="listWisata">
-        <item>@drawable/w1</item>
-        <item>@drawable/w2</item>
-        <item>@drawable/w3</item>
-        <item>@drawable/w4</item>
-        <item>@drawable/w5</item>
-        <item>@drawable/w6</item>
-        <item>@drawable/w7</item>
-        <item>@drawable/w8</item>
-        <item>@drawable/w9</item>
-        <item>@drawable/w10</item>
-    </string-array>
+    <string name="wisata01">Terletak disebelah Utara Ibukota Kabupaten Jeneponto tepatnya di desa Tompo Bulu Kecamatan Rumbia, Jarak tempuh ± 30 KM atau ± 45 Menit dengan kendaraan umum dar Kota Bontosunggu  (ibukota Kabupaten Jeneponto). Obyek Wisata ini menawarkan keindahan akan panorama alam yang sejuk, selain itu pengunjung dimanjakan dengan tersedianya kolam renang, villa, Ruang pertemuan, aneka permainan out bond serta flying fox. adapun infrastruktur lainnya adalah Mushallah, Restoran Tradisional, Gazebo dan Ruang Ganti/Toilet.</string>
+    <string name="wisata02">Terletak disebelah Utara Ibukota Kabupaten Jeneponto tepatnya di desa Rumbia Kecamatan Rumbia, Jarak tempuh ± 25 KM atau ± 35 Menit dengan kendaraan umum dar Kota Bontosunggu  (ibukota Kabupaten Jeneponto). Obyek Wisata ini menawarkan keindahan akan panorama alam yang sejuk, selain itu pengunjung dimanjakan dengan tersedianya Air Terjun Ketinggian ± 100 Meter, kolam renang, Rest Area/ Smooking, Jajanan Tradisional, Lahan Parkir, Pedistrian jalan, Gazebo, dan Ruang Ganti/Toilet.</string>
+    <string name="wisata03">Terletak disebelah Barat Ibukota Kabupaten Jeneponto tepatnya di Kelurahan Tonrokassi Barat Kecamatan Tamalatea Kabupaten Jeneponto, Jarak tempuh ± 25 KM atau ± 35 Menit dengan kendaraan umum dari Kota Bontosunggu  (ibu kota Kabupaten Jeneponto). Obyek Wisata ini menawarkan keindahan akan panorama alam yang indah, selain itu pengunjung dimanjakan dengan tersedianya Hamparan pasir putih, sumur jodoh, kolam renang, Villa, Panggung Hiburan, Dermaga, Jajanan Tradisional, lahan parkir, Pedistarian jalan, Mushallah, Aula, Gazebo dan Ruang Ganti/Toilet.</string>
+    <string name="wisata04">Terletak disebelah Barat Ibu kota Kabupaten Jeneponto tepatnya di kelurahan Tamanroya Kecamatan Tamalatea Kabupaten Jeneponto Jarak tempuh ± 20 KM atau ± 30 Menit dengan kendaraan umum dari Kota Bontosunggu  (ibukota Kabupaten Jeneponto). Obyek Wisata ini menawarkan pengunjung dengan menyediakan kolam renang,penginapan Jajanan Tradisional, Lahan Parkir, Lahan parkir, Musallah, dan Ruang Ganti/Toilet.</string>
+    <string name="wisata05">Terletak disebelah Utara Ibukota Kabupaten Jeneponto tepatnya di desa kampala kec. Arungkeke, Jarak tempuh ± 18 KM atau ± 15 Menit dengan kendaraan umum dari Kota Bontosunggu  (ibukota Kabupaten Jeneponto). Obyek Wisata ini menawarkan keindahan akan panorama hamparan pasir putih, selain itu pengunjung dimanjakan dengan tersedianya, kolam renang, villa/ panggung hiburan, Lahan Parkir, Pedistrian jalan, Gazebo, dan Ruang Ganti/Toilet.</string>
+    <string name="wisata06">Terletak disebelah Timur Ibukota Kabupaten Jeneponto tepatnya di desa Ujung Kec. Tarowang Kabupaten Jeneponto, Jarak tempuh ± 25 KM atau ± 35 Menit dengan kendaraan umum dar Kota Bontosunggu  (ibukota Kabupaten Jeneponto). Obyek Wisata ini menawarkan keindahan akan panorama alam yang indah akan rumbunnya pohon kelapa, selain itu pengunjung dimanjakan dengan  hamparan pasir putih, jajanan kelapa muda, lahan parkir, Gazebo, dan Ruang Ganti/Toilet.</string>
+    <string name="wisata07">Terletak disebelah Timur Ibu kota Kabupaten Jeneponto tepatnya di desa Bontorappo Kecamatan Tarowang Kabupaten Jeneponto, Jarak tempuh ± 20 KM atau ± 30 Menit dengan kendaraan umum dar Kota Bontosunggu  (ibukota Kabupaten Jeneponto). Obyek Wisata ini menawarkan keindahan akan panorama alam yang indah bagi pengunjung, selain itu bungung salapang atau sembilan sumjur sangat disakralkan oleh masyarakat setempat bahwa dengan mandi pada sumur tersebut maka anak muda akan segera mendapatkan jodoh.</string>
+    <string name="wisata08">Terletak disebelah Barat Ibukota Kabupaten Jeneponto tepatnya di Kelurahan Bontorannu  Kecamatan Bangkala Kabupaten Jeneponto, Jarak tempuh ± 30 KM atau ± 45 Menit dengan kendaraan umum dari Kota Bontosunggu  (ibukota Kabupaten Jeneponto). Obyek Wisata ini menawarkan keindahan akan panorama alam yang indah bagi pengunjung, selain itu hamparan pasir putih , jajanan kelapa muda dan kuliner ikan laut, gazebo, dan ruang ganti/toilet.</string>
+    <string name="wisata09">Terletak disebelah Barat Ibukota Kabupaten Jeneponto tepatnya di desa Beroanging Kecamatan Bangkala Barat Kabupaten Jeneponto, Jarak tempuh ± 50 KM atau ± 60 Menit dengan kendaraan umum dar Kota Bontosunggu  (ibukota Kabupaten Jeneponto). Obyek Wisata ini menawarkan keindahan akan panorama alam yang indah bagi pengunjung, selain itu ada kolam renang, Jajanan Tradisional, Gazebo dan ruang ganti/toilet.</string>
+    <string name="wisata10">Terletak disebelah Barat Ibukota Kabupaten Jeneponto tepatnya di Kelurahan Bontorannu  Kecamatan Bangkala Kabupaten Jeneponto, Jarak tempuh ± 35 KM atau ± 45 Menit dengan kendaraan umum dari Kota Bontosunggu  (ibukota Kabupaten Jeneponto). Obyek Wisata ini menawarkan keindahan akan panorama alam yang indah dengan susunan Batu Besar yang dibentuk oleh alam, selain itu ada jajanan Tradisional dan Adrenaline yang cukup menantang.</string>
+    <string name="wisata11">Terletak disebelah Utara Ibukota Kabupaten Jeneponto tepatnya di Desa Datara   Kecamatan Bontoramba Kabupaten Jeneponto, Jarak tempuh ± 40 KM atau ± 45 Menit dengan kendaraan umum dari Kota Bontosunggu  (ibukota Kabupaten Jeneponto). Obyek Wisata ini menawarkan keindahan akan panorama alam yang indah bagi pengunjung, selain itu ada Air Terjun , jajanan Tradisional dan adrenalin yang menantang.</string>
+    <!--<string-array name="listWisata">-->
+        <!--<item>@drawable/w1</item>-->
+        <!--<item>@drawable/w2</item>-->
+        <!--<item>@drawable/w3</item>-->
+        <!--<item>@drawable/w4</item>-->
+        <!--<item>@drawable/w5</item>-->
+        <!--<item>@drawable/w6</item>-->
+        <!--<item>@drawable/w7</item>-->
+        <!--<item>@drawable/w8</item>-->
+        <!--<item>@drawable/w9</item>-->
+        <!--<item>@drawable/w10</item>-->
+    <!--</string-array>-->
 </resources>
 

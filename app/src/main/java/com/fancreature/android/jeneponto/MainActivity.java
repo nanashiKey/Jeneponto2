@@ -20,6 +20,7 @@ import android.view.View;
 
 import com.fancreature.android.jeneponto.Activity.Bahasa;
 import com.fancreature.android.jeneponto.Activity.Beranda;
+import com.fancreature.android.jeneponto.Activity.EnergiStart;
 import com.fancreature.android.jeneponto.Activity.Hubungi;
 import com.fancreature.android.jeneponto.Activity.Investasi;
 import com.fancreature.android.jeneponto.Activity.Kalkulator;
@@ -30,6 +31,7 @@ import com.fancreature.android.jeneponto.Activity.Sample;
 import com.fancreature.android.jeneponto.Activity.Something;
 import com.fancreature.android.jeneponto.Activity.Tracking;
 import com.fancreature.android.jeneponto.Activity.Wisata;
+import com.fancreature.android.jeneponto.KontenWisata.WisataSatu;
 
 /**
  * Created by Irfan Assidiq on 7/26/2017.
@@ -96,7 +98,15 @@ public class MainActivity extends AppCompatActivity{
     @Override
     public void onBackPressed() {
 //        super.onBackPressed();
-        if (FragmentClass == Beranda.class){
+        if (FragmentClass == Beranda.class
+                || FragmentClass == WisataSatu.class
+                || FragmentClass == Peluang.class
+                || FragmentClass == Keluhan.class
+                || FragmentClass == Perizinan.class
+                || FragmentClass == EnergiStart.class
+                || FragmentClass == Tracking.class
+                || FragmentClass == Kalkulator.class
+                ||FragmentClass == Hubungi.class){
         AlertDialog mDialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.app_name)
                 .setMessage(R.string.sure)
@@ -125,8 +135,25 @@ public class MainActivity extends AppCompatActivity{
 
         mDialog.show();
     }
+//    else if(FragmentClass == Wisata.class
+//                || FragmentClass == Peluang.class
+//                || FragmentClass == Keluhan.class
+//                || FragmentClass == Perizinan.class
+//                || FragmentClass == EnergiStart.class
+//                || FragmentClass == Tracking.class
+//                || FragmentClass == Kalkulator.class
+//                ||FragmentClass == Hubungi.class){
+//
+//                FragmentClass = Beranda.class;
+//            try {
+//                fragment = (Fragment) FragmentClass.newInstance();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
         else{
-            FragmentClass = Beranda.class;
+            FragmentClass = getFragmentManager().getClass();
+
             try {
                 fragment = (Fragment) FragmentClass.newInstance();
             } catch (Exception e) {
@@ -137,6 +164,8 @@ public class MainActivity extends AppCompatActivity{
             fragmentmanager.beginTransaction().replace(R.id.fContent, fragment, "My Tag").commit();
             setTitle(super.getTitle());
              mdrawer.closeDrawers();
+
+//            super.onBackPressed();
         }
     }
 
@@ -197,7 +226,7 @@ public class MainActivity extends AppCompatActivity{
                 FragmentClass = Perizinan.class;
                 break;
             case R.id.nav_lima:
-                FragmentClass = Something.class;
+                FragmentClass = EnergiStart.class;
                 break;
             case R.id.nav_enam:
                 FragmentClass = Tracking.class;

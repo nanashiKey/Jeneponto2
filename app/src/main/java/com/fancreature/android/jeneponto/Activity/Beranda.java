@@ -22,6 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
@@ -71,7 +72,8 @@ private String TAG = Beranda.class.getSimpleName();
     private Class FragmentClass;
     FragmentManager fragmentManager;
     Fragment fragment = null;
-
+    @Bind(R.id.btna)
+    Button btna;
     private static String url = "http://visitjeneponto.id/getdata.php/";
 //    private Uri urix = Uri.parse("http://www.visitjeneponto.id"); // missing 'http://' will cause crashed
 
@@ -79,7 +81,7 @@ private String TAG = Beranda.class.getSimpleName();
 
 @Override
 public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-    View rootView = inflater.inflate(R.layout.httpsample, container, false);
+    View rootView = inflater.inflate(R.layout.httpsample2, container, false);
 
 //    rootView.findViewById(R.id.l)
     ButterKnife.bind(this, rootView);
@@ -111,11 +113,6 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                     .create();
             mDialog.show();
         }
-
-
-//        setContentView(R.layout.httpsample);
-//        FrameLayout contentFrameLayout = (FrameLayout) findViewById(R.id.FContent); //Remember this is the FrameLayout area within your activity_main.xml
-//        getLayoutInflater().inflate(R.layout.httpsample, contentFrameLayout);
     }
 
 
@@ -132,7 +129,7 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
             super.onPreExecute();
             // Showing progress dialog
             pDialog = new ProgressDialog(Beranda.super.getContext());
-            pDialog.setMessage("Please wait...");
+            pDialog.setMessage("Mohon tunggu...");
             pDialog.setCancelable(false);
             pDialog.show();
 
@@ -187,29 +184,9 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "Json parsing error: " + e.getMessage());
-//                    runOnUiThread(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            Toast.makeText(getContext(),
-//                                    "Json parsing error: " + e.getMessage(),
-//                                    Toast.LENGTH_LONG)
-//                                    .show();
-//                        }
-//                    });
-
                 }
             } else {
                 Log.e(TAG, "Couldn't get json from server.");
-//                runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        Toast.makeText(getContext(),
-//                                "Couldn't get json from server. Check LogCat for possible errors!",
-//                                Toast.LENGTH_LONG)
-//                                .show();
-//                    }
-//                });
-
             }
 
             return null;
@@ -224,13 +201,18 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
             /**
              * Updating parsed JSON data into ListView
              * */
-            ListAdapter adapter = new SimpleAdapter(
-                    Beranda.super.getContext(), contactList,
-                    R.layout.list_item, new String[]{"tanggal", "judul"}, new int[]{R.id.tanggal, R.id.judul});
-
-            lv.setAdapter(adapter);
+//            if (contactList.toArray().equals(contactList.toArray()[0])) {
+//                ListAdapter adapter = new SimpleAdapter(
+//                        Beranda.super.getContext(), contactList,
+//                        R.layout.cv_list, new String[]{"judul"}, new int[]{R.id.judul});
+//                lv.setAdapter(adapter);
+//            }else{
+                ListAdapter adapter = new SimpleAdapter(
+                        Beranda.super.getContext(), contactList,
+                        R.layout.list_item, new String[]{"tanggal", "judul"}, new int[]{R.id.tanggal, R.id.judul});
+                lv.setAdapter(adapter);
+//            }
         }
-
     }
 
 
@@ -241,7 +223,7 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 1){
-                    Log.d("ini akses lokasi", "ntuk posisi 1");
+                    Log.d("ini akses lokasi", "untuk posisi 1");
                 }
                 switch (position){
                     case 0 :
@@ -312,6 +294,14 @@ public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 //
 //            }
 //        });
+        btna.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse("https://visitjeneponto.id"));
+                startActivity(i);
+            }
+        });
     }
 
     private boolean cekInternet(){

@@ -1,30 +1,21 @@
 package com.fancreature.android.jeneponto.KontenBerita;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import com.fancreature.android.jeneponto.Activity.Beranda;
 import com.fancreature.android.jeneponto.HttpHandler;
-import com.fancreature.android.jeneponto.KontenWisata.WisataFull;
-import com.fancreature.android.jeneponto.MainActivity;
 import com.fancreature.android.jeneponto.R;
 
 import org.json.JSONArray;
@@ -69,6 +60,7 @@ public class PosSatu extends Fragment{
         super.onCreate(savedInstanceState);
         contactList = new ArrayList<>();
         new GetContacts().execute();
+
     }
 
 

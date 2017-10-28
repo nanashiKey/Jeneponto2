@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teksbok">
+    android:background="@color/putih">
     <LinearLayout
         android:id="@+id/listb"
         android:layout_width="match_parent"
@@ -68,50 +68,48 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15dp"
-            android:textColor="@color/middleblue"
+            android:textColor="#000"
             android:text="ini isi konten"
             android:textAlignment="textStart"
             android:layout_gravity="center_vertical|left"
             android:paddingRight="15dp"
             android:paddingLeft="15dp"
             android:paddingTop="20dp"
+            android:paddingBottom="10dp"
             />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:orientation="horizontal">-->
 
-                <Button
-                    android:id="@+id/btn_back"
-                    android:layout_width="100dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@color/middleblue"
-                    android:layout_marginRight="10dp"
-                    android:text="Kembali"
-                    android:textAlignment="center"
-                    android:textColor="@color/teksbok"
-                    android:textSize="14sp" />
-            <Button
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_gravity="center_horizontal"
-                android:textAlignment="center"
-                android:layout_width="100dp"
-                android:layout_height="30dp"
-                android:background="@color/middleblue"
-                android:text="lihat web"
-                android:layout_marginLeft="10dp"
-                android:textSize="14sp"
-                android:textColor="@color/teksbok"
-                android:id="@+id/btn_berita"
-
-                />
-        </LinearLayout>
+                <!--<Button-->
+                    <!--android:id="@+id/btn_back"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_gravity="center_horizontal"-->
+                    <!--android:background="@color/middleblue"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:text="Kembali"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@color/teksbok"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:onClick="goBack"/>-->
+            <!--<Button-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:textAlignment="center"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@color/middleblue"-->
+                <!--android:text="lihat web"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:textSize="14sp"-->
+                <!--android:textColor="@color/teksbok"-->
+                <!--android:id="@+id/btn_berita"-->
+                <!--android:onClick="goWeb"-->
+                <!--/>-->
+        <!--</LinearLayout>-->
 
     </LinearLayout>
 

@@ -21,6 +21,7 @@ public class FragmentAsal extends Fragment {
     private int page;
     String[] listArray={"siwalan", "jambu mete", "kelapa", "kopi arabica"};
 
+
     public static FragmentAsal newInstance(int page, String taitel){
 
         FragmentAsal fragmentAwal = new FragmentAsal();
@@ -36,6 +37,7 @@ public class FragmentAsal extends Fragment {
         super.onCreate(savedInstanceState);
         page = getArguments().getInt("someInt", 1);
         taitel = getArguments().getString("someTitle");
+
     }
 
     @Nullable

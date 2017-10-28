@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.astuetz.PagerSlidingTabStrip;
 import com.fancreature.android.jeneponto.Activity.Peluang;
 import com.fancreature.android.jeneponto.Activity.PeluangSub;
 import com.fancreature.android.jeneponto.FragmentPeluang.FragmentAsal;
@@ -16,11 +17,18 @@ import com.fancreature.android.jeneponto.FragmentPeluang.FragmentTiga;
  * Created by Irfan Assidiq on 8/25/2017.
  */
 
-public class FragmentClassAdapt extends FragmentPagerAdapter {
+public class FragmentClassAdapt extends FragmentPagerAdapter implements PagerSlidingTabStrip.IconTabProvider {
 
     final int PAGE_COUNT = 6;
-    private String tabTitles[]= new String[]{"Aset Daerah", "Perikanan dan Kelautan", "Perkebunan", "Pertanian Holtikultura", "Pertanian Tanaman Pangan","Peternakan"};
-
+//    private String tabTitles[]= new String[]{"Aset Daerah", "Perikanan dan Kelautan", "Perkebunan", "Pertanian Holtikultura", "Pertanian Tanaman Pangan","Peternakan"};
+    private int tabTitles[]={
+        R.drawable.asset,
+        R.drawable.ikan,
+        R.drawable.kebun,
+        R.drawable.tani2,
+        R.drawable.tani1,
+        R.drawable.ternak
+};
     public FragmentClassAdapt(FragmentManager fm) {
         super(fm);
     }
@@ -50,8 +58,13 @@ public class FragmentClassAdapt extends FragmentPagerAdapter {
         return PAGE_COUNT;
     }
 
+//    @Override
+//    public CharSequence getPageTitle(int position) {
+//        return tabTitles[position];
+//    }
+
     @Override
-    public CharSequence getPageTitle(int position) {
+    public int getPageIconResId(int position) {
         return tabTitles[position];
     }
 }

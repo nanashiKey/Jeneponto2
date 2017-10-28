@@ -38,8 +38,6 @@ import static android.content.ContentValues.TAG;
 public class PosTujuh extends Fragment {
     @Nullable
 
-    @Bind(R.id.btn_berita)
-    Button btnberita;
     @Bind(R.id.list)
     ListView lv;
     private ProgressDialog pDialog;

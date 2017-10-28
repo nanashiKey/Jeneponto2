@@ -73,7 +73,7 @@ public class Keluhan extends Fragment {
             public void onClick(View v) {
               CekStatus();
 //                clearAja();
-                nama.setText("admin test");
+//                nama.setText("admin test");
             }
         });
     }
@@ -171,6 +171,7 @@ public class Keluhan extends Fragment {
 
         @Override
         protected void onPostExecute(String s) {
+            clearAja();
             Toast.makeText(getActivity().getApplicationContext(), s, Toast.LENGTH_LONG).show();
         }
     }
